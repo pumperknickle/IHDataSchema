@@ -3,7 +3,7 @@ import Foundation
 import Vapor
 
 public protocol RecordedResponse: Model, Content, Parameter, Migration {
-    var id: Int? { get }
+    var id: String? { get }
     var device: String! { get }
     var service: String! { get }
     var version: String! { get }
@@ -11,5 +11,5 @@ public protocol RecordedResponse: Model, Content, Parameter, Migration {
     var lastRequest: String! { get }
     var lastResponse: String! { get }
     
-    init(id: Int?, device: String, service: String, version: String, initialRequests: [String], lastRequest: String, lastResponse: String)
+    init(id: ID?, device: String, service: String, version: String, initialRequests: [String], lastRequest: String, lastResponse: String)
 }
