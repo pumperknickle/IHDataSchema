@@ -11,9 +11,9 @@ public final class CapturedRequestImpl: Codable {
     private let rawSessionID: String!
     private let rawLastRequest: String!
     private let rawSentResponse: String!
-    private let rawSafeToScan: Bool!
+    private let rawSafetyStatus: RequestSafetyStatus!
     
-    public init(id: Int? = nil, createdAt: Date? = nil, device: String, service: String, version: String, sessionID: String, lastRequest: String, sentResponse: String, safeToScan: Bool) {
+    public init(id: Int? = nil, createdAt: Date? = nil, device: String, service: String, version: String, sessionID: String, lastRequest: String, sentResponse: String, safetyStatus: RequestSafetyStatus) {
         self.rawID = id
         self.rawCreatedAt = createdAt
         self.rawDevice = device
@@ -22,7 +22,7 @@ public final class CapturedRequestImpl: Codable {
         self.rawSessionID = sessionID
         self.rawLastRequest = lastRequest
         self.rawSentResponse = sentResponse
-        self.rawSafeToScan = safeToScan
+        self.rawSafetyStatus = safetyStatus
     }
 }
 
@@ -48,5 +48,5 @@ extension CapturedRequestImpl: CapturedRequest {
     public var sessionID: String! { return rawSessionID }
     public var lastRequest: String! { return rawLastRequest }
     public var sentResponse: String! { return rawSentResponse }
-    public var safeToScan: Bool! { return rawSafeToScan }
+    public var safetyStatus: RequestSafetyStatus! { return rawSafetyStatus }
 }
