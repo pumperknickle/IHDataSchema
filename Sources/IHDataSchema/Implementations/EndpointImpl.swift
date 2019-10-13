@@ -40,4 +40,3 @@ extension EndpointImpl: Endpoint {
     public var ip: String! { return rawIP }
     public var port: String! { return rawPort }
 }
-
